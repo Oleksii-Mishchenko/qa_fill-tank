@@ -49,7 +49,7 @@ describe('fillTank', () => {
     expect(customer.money).toBe(1400);
   });
 
-  it('should fill only freeSpace if amount > freeSpace>', () => {
+  it('should fill only freeSpace if amount > freeSpace', () => {
     const customer = {
       money: 3000,
       vehicle: {
@@ -66,7 +66,7 @@ describe('fillTank', () => {
     expect(customer.money).toBe(1400);
   });
 
-  it('should fill what the customer can pay for>', () => {
+  it('should fill what the customer can pay for', () => {
     const customer = {
       money: 500,
       vehicle: {
@@ -83,7 +83,7 @@ describe('fillTank', () => {
     expect(customer.money).toBe(0);
   });
 
-  it('should round the poured amount to the tenth>', () => {
+  it('should round the poured amount to the tenth', () => {
     const customer = {
       money: 150,
       vehicle: {
@@ -99,7 +99,7 @@ describe('fillTank', () => {
     expect(customer.vehicle.fuelRemains).toBe(11.9);
   });
 
-  it('should round the price to the nearest hundredth>', () => {
+  it('should round the price to the nearest hundredth', () => {
     const customer = {
       money: 150,
       vehicle: {
@@ -129,5 +129,6 @@ describe('fillTank', () => {
     fillTank(customer, fuelPrice, amount);
 
     expect(customer.vehicle.fuelRemains).toBe(8);
+    expect(customer.money).toBe(150);
   });
 });
